@@ -4,6 +4,7 @@ def converter(dec = int):
     val = ''
     decimal = dec
     while dec != 0:
+        r = dec % divisor
         if divisor == 16:
             match r: 
                 case 10: r = 'A'
@@ -12,7 +13,6 @@ def converter(dec = int):
                 case 13: r = 'D'
                 case 14: r = 'E'
                 case 15: r = 'F'
-        r = dec % divisor
         val = str(r) + val
         dec = dec // divisor
     print(f'{decimal}¹\u2070 convertido para base {divisor} é: {val}')
